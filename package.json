@@ -1,0 +1,23 @@
+{
+  "name": "malpipe",
+  "version": "0.0.1",
+  "description": "this one will be reserved.",
+  "main": "client.js",
+  "scripts": {
+    "test": "ava",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malpower/MalPipe.git"
+  },
+  "author": "malpower",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/malpower/MalPipe/issues"
+  },
+  "homepage": "https://github.com/malpower/MalPipe#readme",
+  "dependencies": {
+    "ava": "^0.19.1"
+  }
+}
