@@ -70,3 +70,17 @@ test("test if we can transform the transformed array back.",t=>
     }
     t.pass();
 });
+
+test("test if the transform function cost less than 50ms when process 200k data",t=>
+{
+    let tc=new TicketChecker;
+    let buffer=Buffer.alloc(200*1024);
+    let start=(new Date).getTime();
+    tc.transform(buffer);
+    let end=(new Date).getTime();
+    if (end-start>50)
+    {
+        return t.fail();
+    }
+    t.pass();
+});
