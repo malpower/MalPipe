@@ -10,14 +10,15 @@ class TicketChecker
         {
             throw new TypeError(`"Buffer" must be a buffer.`);
         }
+        let des=Buffer.alloc(buffer.length);
         for (let i=0;i<buffer.length;i++)
         {
             let v=buffer.readUInt8(i);
             v=v^this.firstToken;
             v=v^token;
-            buffer.writeUInt8(v,i);
+            des.writeUInt8(v,i);
         }
-        return buffer;
+        return des;
     }
 }
 
