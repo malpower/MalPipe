@@ -48,7 +48,7 @@ dnsServer.on("data",(message,info)=>
 
 const server=net.createServer(async (socket)=>
 {
-    let remote=net.connect({host: serverAddress,port: serverPort},async ()=>
+    let remote=net.connect({host: conf.serverAddress,port: conf.serverPort},async ()=>
     {
         let cache=Buffer.alloc(0);
         remote.on("data",async (chunk)=>

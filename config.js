@@ -1,6 +1,6 @@
 module.exports={password: "22fgdfghfghfghg",
                 serverPort: 35001,
-                serverAddress: "www.malpower.net",
+                serverAddress: "conoha2.malpower.net",
                 serverDnsPort: 35002,
                 dnsServerAddress: "8.8.8.8",
                 clientPort: 8888,

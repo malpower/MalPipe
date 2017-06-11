@@ -22,7 +22,7 @@ const server=net.createServer((socket)=>
 {
     const proxy=net.connect({host: conf.proxyAddress,port: conf.proxyPort},()=>
     {
-        const cache=Buffer.alloc(0);
+        let cache=Buffer.alloc(0);
         socket.on("data",async (chunk)=>
         {
             cache=Buffer.concat([cache,chunk]);
