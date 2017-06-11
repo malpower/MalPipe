@@ -69,8 +69,8 @@ const dnsServer=net.createServer((socket)=>
     r.bind();
     r.on("message",async (message,info)=>
     {
-        let packet=new SPacket(message);   
-        console.log((await packet.getBuffer()).toString());
+        console.log(message.toString());
+        let packet=new SPacket(message);
         socket.write(await packet.getBuffer());
         socket.end();
     }).on("error",()=>
