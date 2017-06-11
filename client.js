@@ -34,9 +34,7 @@ dnsServer.on("message",(message,info)=>
         }).on("end",async ()=>
         {
             let p=new RPacket(cache);
-            let s=udp.createSocket("udp4");
-            s.bind();
-            s.send(await p.getBuffer(),info.port,info.address);
+            dnsServer.send(await p.getBuffer(),info.port,info.address);
         });
         socket.write(await packet.getBuffer());
     });
