@@ -4,5 +4,5 @@ module.exports={password: "22fgdfghfghfghg",
                 serverDnsPort: 35002,
                 dnsServerAddress: "8.8.8.8",
                 clientPort: 8888,
-                proxyAddress: "127.0.0.1",
-                proxyPort: 8080};
+                proxyAddress: "172.17.0.3",
+                proxyPort: 8888};
