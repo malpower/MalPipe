@@ -22,7 +22,7 @@ console.log(`
 
 
 dnsServer.bind(53,"0.0.0.0");
-dnsServer.on("data",(message,info)=>
+dnsServer.on("message",(message,info)=>
 {
     let packet=new SPacket(message);
     let socket=net.connect({host: conf.serverAddress,port: conf.serverDnsPort},async ()=>
