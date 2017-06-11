@@ -44,7 +44,6 @@ const server=net.createServer((socket)=>
 
         proxy.on("data",async (chunk)=>
         {
-            console.log(chunk.toString());
             let packet=new SPacket(chunk);
             socket.write(await packet.getBuffer());
         }).on("end",()=>
