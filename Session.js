@@ -49,6 +49,7 @@ class Session
      * **/
     usend(packet)
     {
+        console.log("JJJJJJJ", this.udpInfo);
         this.udpSocket.send(packet.toBuffer(), this.udpInfo.port, this.udpInfo.address);
     }
     close()
