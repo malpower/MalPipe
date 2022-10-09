@@ -1,8 +1,13 @@
-module.exports={password: "22fgdfghfghfghg",
-                serverPort: 35001,
-                serverAddress: "conoha2.malpower.net",
-                serverDnsPort: 35002,
-                dnsServerAddress: "8.8.8.8",
-                clientPort: 8888,
-                proxyAddress: "172.17.0.3",
-                proxyPort: 8888};
+module.exports={
+    remote: {
+        port: 8888, 
+        address: "jp.malpower.net"
+    },
+    target: {
+        port: 6443,
+        address: "127.0.0.1"
+    },
+    local: {
+        port: 60000
+    }
+};
