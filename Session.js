@@ -1,6 +1,7 @@
 const net=require("net");
 const udp=require("dgram");
 const Packet=require("./Packet");
+const RPacket = require("./RPacket");
 
 
 class Session
@@ -15,7 +16,12 @@ class Session
     {
         this.tcpSocket=socket;
         this.udpInfo=rinfo;
-        this.udpSocket=udp.createSocket("udp4");
+        this.udpSocket=udp.createSocket("udp4", (msg, rinfo)=>
+        {
+            console.log("xx", rinfo);
+            const rpacket=new RPacket(msg);
+            this.tcpSocket.write(this.descrypt(rpacket.buffer));
+        });
         this.tcpSocket.on("data", (chunk)=>
         {
             const encrypted=this.encrypt(chunk);

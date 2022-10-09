@@ -7,6 +7,7 @@ const sessions=new Map();
 
 const server=udp.createSocket("udp4", (buffer, rinfo)=>
 {
+    console.log("HERE");
     const id=buffer.readUInt32BE(2);
     if (sessions.has(id))
     {

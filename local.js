@@ -7,6 +7,7 @@ const sessions=new Map();
 
 const server=net.createServer((socket)=>
 {
+    console.log("LLL");
     const session=new Session(socket, config.remote);
     session.start();
 });
