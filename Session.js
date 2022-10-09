@@ -22,6 +22,10 @@ class Session
             const rpacket=new RPacket(msg);
             this.tcpSocket.write(this.descrypt(rpacket.buffer));
         });
+        this.udpSocket.on("message", (msg, rinfo)=>
+        {
+            console.log("XX");
+        });
         this.tcpSocket.on("data", (chunk)=>
         {
             const encrypted=this.encrypt(chunk);
